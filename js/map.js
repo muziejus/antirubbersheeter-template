@@ -21,3 +21,7 @@ const bounds = [
 L.imageOverlay("braun-map-of-vilnius.jpg", bounds).addTo(map);
 
 map.fitBounds(bounds);
+
+for (const place of data.places) {
+  L.marker([place.y, place.x]).bindPopup(place.name).addTo(map);
+}
